@@ -8,25 +8,14 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-        #first{
-            width: 1100px;
-            height: 150px;
-            border:1px solid black;
-            
-        }
-        #second{
-            width: 1100px;
-            height: 450px;
-            background-color:azure;
-        }
-        
-    </style>    
+
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+
 </head>
 <body>
     <div class="container">
     <div id="first">
-        <img src="image/UBND.jpg"/> 
+        <img src="css/image/UBND.jpg"/> 
     </div>
         
     <div id="second"> 
@@ -78,8 +67,11 @@
         
     </div>
         
-   
+    <footer th:fragment="footer" class="container"> 
+        &copy; 2017 Nhom Java Nang Cao
+    </footer>
     
     </div> 
+    
 </body>    
 </html>
