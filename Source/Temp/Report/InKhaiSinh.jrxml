@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-04-06T17:06:36 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InKhaiSinh" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7fab4dc5-1059-4478-9620-cd7298cd7496">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="dG9raGFpICwxNSwxNSxhZjVhN2JmOS1iOTFkLTQwYTQtOTQ1Mi03ZTMwYTgxNDE0NDg7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CSDL"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT *
+FROM tokhai]]>
+	</queryString>
+	<field name="MATK" class="java.lang.String"/>
+	<field name="MAQT" class="java.lang.String"/>
+	<field name="MAXA" class="java.lang.String"/>
+	<field name="MADT" class="java.lang.String"/>
+	<field name="MANK" class="java.lang.String"/>
+	<field name="NHA_MANK" class="java.lang.String"/>
+	<field name="MATG" class="java.lang.String"/>
+	<field name="NHA_MANK2" class="java.lang.String"/>
+	<field name="NGAYLAPTK" class="java.sql.Date"/>
+	<field name="HTNKS" class="java.lang.String"/>
+	<field name="GIOITINH" class="java.lang.String"/>
+	<field name="NGAYSINH" class="java.sql.Date"/>
+	<field name="NGAYSINHBC" class="java.lang.String"/>
+	<field name="NOISINH" class="java.lang.String"/>
+	<field name="GHICHU" class="java.lang.String"/>
+	<field name="QUANHENGDKS" class="java.lang.String"/>
+	<group name="MATK">
+		<groupExpression><![CDATA[$F{MATK}]]></groupExpression>
+	</group>
+	<group name="MAQT">
+		<groupExpression><![CDATA[$F{MAQT}]]></groupExpression>
+	</group>
+	<group name="MAXA">
+		<groupExpression><![CDATA[$F{MAXA}]]></groupExpression>
+	</group>
+	<group name="MADT">
+		<groupExpression><![CDATA[$F{MADT}]]></groupExpression>
+	</group>
+	<group name="MANK">
+		<groupExpression><![CDATA[$F{MANK}]]></groupExpression>
+	</group>
+	<group name="NHA_MANK">
+		<groupExpression><![CDATA[$F{NHA_MANK}]]></groupExpression>
+	</group>
+	<group name="MATG">
+		<groupExpression><![CDATA[$F{MATG}]]></groupExpression>
+	</group>
+	<group name="NHA_MANK2">
+		<groupExpression><![CDATA[$F{NHA_MANK2}]]></groupExpression>
+	</group>
+	<group name="NGAYLAPTK">
+		<groupExpression><![CDATA[$F{NGAYLAPTK}]]></groupExpression>
+	</group>
+	<group name="HTNKS">
+		<groupExpression><![CDATA[$F{HTNKS}]]></groupExpression>
+	</group>
+	<group name="GIOITINH">
+		<groupExpression><![CDATA[$F{GIOITINH}]]></groupExpression>
+	</group>
+	<group name="NGAYSINH">
+		<groupExpression><![CDATA[$F{NGAYSINH}]]></groupExpression>
+	</group>
+	<group name="NGAYSINHBC">
+		<groupExpression><![CDATA[$F{NGAYSINHBC}]]></groupExpression>
+	</group>
+	<group name="NOISINH">
+		<groupExpression><![CDATA[$F{NOISINH}]]></groupExpression>
+	</group>
+	<group name="GHICHU">
+		<groupExpression><![CDATA[$F{GHICHU}]]></groupExpression>
+	</group>
+	<group name="QUANHENGDKS">
+		<groupExpression><![CDATA[$F{QUANHENGDKS}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="269" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="-16" width="350" height="20" uuid="e7f0b279-880d-4273-9107-bc8f4e62cada"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="350" height="20" uuid="8baf5e3e-752f-4c1d-9601-083645ee6267"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Độc Tự - Tự Do - Hạnh Phúc]]></text>
+			</staticText>
+			<image>
+				<reportElement x="264" y="14" width="30" height="30" uuid="735c5bb6-6efb-4724-bf20-5b0609df3c60"/>
+				<imageExpression><![CDATA["C:/Users/THP/Desktop/88.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="190" y="42" width="173" height="30" forecolor="#FF0400" uuid="11ff4f19-278b-4130-a535-4406e6e619a1"/>
+				<box>
+					<pen lineColor="#0F0F0F"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[GIẤY KHAI SINH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="62" width="100" height="30" uuid="1ce1f14a-795b-4c0d-8ffd-421c943b2e54"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[(BẢN CHÍNH)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="89" width="100" height="30" uuid="ae651351-c6b8-44cb-9378-881a17d970be"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Họ, Chữ Đệm, Tên:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="89" width="50" height="30" uuid="e2990577-d81a-4873-aec2-2762c7219aac"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Giới Tính:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="89" width="100" height="30" uuid="29d78fc4-56f2-4685-b355-3269fcd35064"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HTNKS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="88" width="100" height="30" uuid="e6d21983-897a-487c-ae65-1381150ba436"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GIOITINH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="120" width="100" height="30" uuid="23725cd5-e57f-463a-ac53-5dce594b7c1d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NGAYSINH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="150" width="440" height="30" uuid="f36f601f-a287-4769-8785-7280cc44d192"/>
+				<textElement textAlignment="Left">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NGAYSINHBC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="119" width="111" height="30" uuid="1a5fe685-8e19-4a3d-a36c-c822d905c9bb"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Ngày, Tháng, Năm Sinh:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="149" width="80" height="30" uuid="cf017328-3ab9-4c31-8e8d-4fd99d6b530c"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Ghi Bằng Chữ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="179" width="60" height="30" uuid="bcc67da3-adad-4100-a243-450d35db70c3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Nơi Sinh:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="179" width="460" height="30" uuid="14f452de-d214-48b9-adcd-b99508225d2c"/>
+				<textFieldExpression><![CDATA[$F{NOISINH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="209" width="60" height="30" uuid="5b40f688-8e27-4d9b-af84-cdf6c935ba22"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Dân Tộc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="209" width="60" height="30" uuid="df3e2f23-2b3c-48f3-86d3-8433a2bd9b10"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Quốc Tịch:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="210" width="100" height="30" uuid="a5780578-eb69-4b74-b6ef-a4dc8ebcda5a"/>
+				<textFieldExpression><![CDATA[$F{MADT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="210" width="100" height="30" uuid="18e27e09-9110-4218-99c0-8581c1503f1a"/>
+				<textFieldExpression><![CDATA[$F{MAQT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="239" width="70" height="30" uuid="5500b014-489c-4676-905d-d908be47e318"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Họ Tên Cha:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="59" height="30" uuid="e95d0624-37c8-43d2-ab58-1165edddb0bd"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Dân Tộc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="60" height="30" uuid="c79c3c6e-1748-4c2c-b226-e45846a5e644"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Năm Sinh:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="60" height="30" uuid="00eb980e-0591-4139-b4bb-06ada5a878c2"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Quốc Tịch:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="-30" width="130" height="30" uuid="f1ae2119-262b-4c1d-a814-4a7cf1c4fa42"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Nơi Thường Trú/Tạm Trú:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="60" height="30" uuid="a13b83ef-1ec4-4ee9-bdbf-468b2b9ae17f"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Họ Tên Mẹ:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="171" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="-31" width="59" height="30" uuid="f745e22f-1ba8-4641-8313-fc37f9953487"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Dân Tộc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="0" width="129" height="30" uuid="ab2ec993-4b51-4a92-8d2f-4b314f8bdec3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Nơi Thường Trú/Tạm Trú:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="-30" width="60" height="30" uuid="6d91aa88-b903-4800-8d0c-1fcf5c3ab21b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Quốc Tịch:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="-30" width="60" height="30" uuid="e00ed986-2782-4b78-9c59-231a98b89af4"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Năm Sinh:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
