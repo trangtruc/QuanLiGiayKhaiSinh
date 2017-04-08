@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-04-08T23:09:01 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GIAYTO" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c807976b-2288-4621-8720-93afee1dfecc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CSDL"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="MANK" class="java.lang.String">
+		<defaultValueExpression><![CDATA[new String()]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT quanlykhaisinh.nhankhau.`CMDN`,
+	quanlykhaisinh.nhankhau.`HTNK`,
+	quanlykhaisinh.nhankhau.`TENKHAC`,
+	quanlykhaisinh.nhankhau.`GIOTINH`,
+	quanlykhaisinh.nhankhau.`NGAYSINH`,
+	quanlykhaisinh.nhankhau.`MGAYCAPCM`,
+	quanlykhaisinh.nhankhau.`NOICAPCM`,
+	quanlykhaisinh.nhankhau.`MAQT`,
+	quanlykhaisinh.nhankhau.`MATG`,
+	quanlykhaisinh.nhankhau.`MADT`,
+	quanlykhaisinh.nhankhau.`MAHK`,
+	quanlykhaisinh.nhankhau.`MAXA`,
+	quanlykhaisinh.nhankhau.`MAQH`
+FROM quanlykhaisinh.nhankhau
+WHERE quanlykhaisinh.nhankhau.MANK = $P{MANK}]]>
+	</queryString>
+	<field name="CMDN" class="java.lang.String"/>
+	<field name="HTNK" class="java.lang.String"/>
+	<field name="TENKHAC" class="java.lang.String"/>
+	<field name="GIOTINH" class="java.lang.Integer"/>
+	<field name="NGAYSINH" class="java.sql.Date"/>
+	<field name="MGAYCAPCM" class="java.sql.Date"/>
+	<field name="NOICAPCM" class="java.lang.String"/>
+	<field name="MAQT" class="java.lang.String"/>
+	<field name="MATG" class="java.lang.String"/>
+	<field name="MADT" class="java.lang.String"/>
+	<field name="MAHK" class="java.lang.String"/>
+	<field name="MAXA" class="java.lang.String"/>
+	<field name="MAQH" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="11" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="-20" width="50" height="30" uuid="110b85cb-8339-48dd-8153-99d6d1f3cf85"/>
+				<text><![CDATA[Số CMND:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="-20" width="80" height="30" uuid="ead345af-1e65-417f-9a93-f79cb826adde"/>
+				<textFieldExpression><![CDATA[$F{CMDN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="-20" width="50" height="30" uuid="effd1f2b-319a-4081-8785-dfa3816aa08c"/>
+				<text><![CDATA[Ngày Cấp:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="-20" width="120" height="30" uuid="8d28e161-0cb6-41aa-9efc-6ac3913fa39b"/>
+				<textFieldExpression><![CDATA[$F{MGAYCAPCM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="-20" width="50" height="30" uuid="8f344e30-05ec-405c-b6ab-4776a9ac46be"/>
+				<text><![CDATA[Nơi Cấp:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="-20" width="80" height="30" uuid="ec9c3d89-de59-4dc1-bd35-317f89e3ad09"/>
+				<textFieldExpression><![CDATA[$F{NOICAPCM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

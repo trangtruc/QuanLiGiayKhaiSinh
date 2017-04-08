@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-04-08T22:34:21 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NHANKHAU" pageWidth="595" pageHeight="825" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c3cce2b7-e882-43ad-ae32-94da3c679028">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CSDL"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cXVhbmx5a2hhaXNpbmgubmhhbmtoYXUgLDE1LDE1LDVkOTdjMjdlLTkxMDQtNGZhMC04ZjE4LTZl&#xA;MjA3Zjg4NzllZDs="/>
+	<parameter name="MANK" class="java.lang.String">
+		<defaultValueExpression><![CDATA[new String()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MADT" class="java.lang.String">
+		<defaultValueExpression><![CDATA[new String()]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT quanlykhaisinh.nhankhau.`MADT`,
+	quanlykhaisinh.nhankhau.`MAQT`,
+	quanlykhaisinh.nhankhau.`HTNK`,
+	quanlykhaisinh.nhankhau.`TENKHAC`,
+	quanlykhaisinh.nhankhau.`GIOTINH`,
+	quanlykhaisinh.nhankhau.`NGAYSINH`,
+	quanlykhaisinh.nhankhau.`CMDN`,
+	quanlykhaisinh.nhankhau.`MGAYCAPCM`,
+	quanlykhaisinh.nhankhau.`NOICAPCM`
+FROM quanlykhaisinh.nhankhau
+WHERE 
+	 quanlykhaisinh.nhankhau.`MANK` = $P{MANK}]]>
+	</queryString>
+	<field name="MADT" class="java.lang.String"/>
+	<field name="MAQT" class="java.lang.String"/>
+	<field name="HTNK" class="java.lang.String"/>
+	<field name="TENKHAC" class="java.lang.String"/>
+	<field name="GIOTINH" class="java.lang.Integer"/>
+	<field name="NGAYSINH" class="java.sql.Date"/>
+	<field name="CMDN" class="java.lang.String"/>
+	<field name="MGAYCAPCM" class="java.sql.Date"/>
+	<field name="NOICAPCM" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="401c19e7-fd26-483d-8b20-1693cd5d305e"/>
+				<textFieldExpression><![CDATA[$F{HTNK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="19" width="130" height="23" uuid="8d87290d-cb08-439d-9365-256359ea1f57"/>
+				<textFieldExpression><![CDATA[$F{NGAYSINH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="19" width="120" height="23" uuid="659106e2-1788-4ac7-9f2c-3d42ec84e6aa"/>
+				<text><![CDATA[Ngày, Tháng, Năm Sinh:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="70" height="20" uuid="25f70998-a2c6-4977-b6e7-a101aa9c70b5"/>
+				<text><![CDATA[Dân Tộc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="20" width="70" height="20" uuid="bf92e608-b61c-4a74-88f7-864c986f071f"/>
+				<text><![CDATA[Quốc Tịch:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="70" y="20" width="70" height="20" uuid="b480fcf0-5697-40a8-9d68-26cb6ed462ed"/>
+				<subreportParameter name="MADT">
+					<subreportParameterExpression><![CDATA[$F{MADT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["DANTOC.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="210" y="20" width="70" height="20" uuid="1150700f-670a-4060-8e65-3af8d1210c3b"/>
+				<subreportParameter name="MAQT">
+					<subreportParameterExpression><![CDATA[$F{MAQT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["QTICH.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
