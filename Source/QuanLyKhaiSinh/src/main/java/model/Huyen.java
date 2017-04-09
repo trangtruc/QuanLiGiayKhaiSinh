@@ -12,25 +12,25 @@ import javax.persistence.*;
 public class Huyen {
 	private String maHuyen;
 	private String tenHuyen;
-	private Tinh classtinh;
+	private Tinh classTinh;
 	private List<Xa> listXa;
 	public Huyen() {
 		super();
 	}
-	@OneToMany(mappedBy = "classHuyen", cascade = CascadeType.ALL)
+	
 	public List<Xa> getListXa() {
 		return listXa;
 	}
-
+	@OneToMany(mappedBy = "classHuyen", cascade = CascadeType.ALL)
 	public void setListXa(List<Xa> listXa) {
 		this.listXa = listXa;
 	}
 
-	public Huyen(String maHuyen, String tenHuyen, Tinh classtinh, List<Xa> listXa) {
+	public Huyen(String maHuyen, String tenHuyen, Tinh classTinh, List<Xa> listXa) {
 		super();
 		this.maHuyen = maHuyen;
 		this.tenHuyen = tenHuyen;
-		this.classtinh = classtinh;
+		this.classTinh = classTinh;
 		this.listXa = listXa;
 	}
 
@@ -48,12 +48,12 @@ public class Huyen {
 		this.tenHuyen = tenHuyen;
 	}
 	@ManyToOne
-	@JoinColumn(name="tinh_id")
+	@JoinColumn(name="huyen_tinh_id")
 	public Tinh getTinh() {
-		return classtinh;
+		return classTinh;
 	}
-	public void setTinh(Tinh classtinh) {
-		this.classtinh = classtinh;
+	public void setTinh(Tinh classTinh) {
+		this.classTinh = classTinh;
 	}
 	
 	

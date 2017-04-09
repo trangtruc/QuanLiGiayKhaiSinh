@@ -12,11 +12,11 @@ public class Tinh {
 	public Tinh() {
 		super();
 	}
-	@OneToMany(mappedBy = "classTinh", cascade = CascadeType.ALL)
+	
 	public List<Huyen> getListHuyen() {
 		return listHuyen;
 	}
-
+	@OneToMany(mappedBy = "classTinh", cascade = CascadeType.ALL)
 	public void setListHuyen(List<Huyen> listHuyen) {
 		this.listHuyen = listHuyen;
 	}
