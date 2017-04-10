@@ -8,24 +8,81 @@ import javax.persistence.*;
 @Entity
 @Table(name="tokhai")
 public class ToKhai {
+	@Column(name="matk",nullable=false)
+	@Id
 	private String maToKhai;
+	
+	@Column(name="ngatlap",nullable=false)
 	private Date ngayLap;
+	
+	@Column(name="htnks",nullable=false)
 	private String hoTenNguoiKS;
+	
+	@Column(name="gioitinh",nullable=false)
 	private String gioiTinh;
+	
+	@Column(name="ngaysinh",nullable=false)
 	private Date ngaySinh;
+	
+	@Column(name="ngaysinhbc",nullable=false)
 	private String ngaySinhBC;
+	
+	@Column(name="noisinh",nullable=false)
 	private String noiSinh;
+	
+	@Column(name="ghichu",nullable=false)
 	private String ghiChu;
+	
+	@Column(name="quanhevoingdk",nullable=false)
 	private String quanHeVoiNgDK;
+	
+	@Column(name="maxa",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="noidkks_id")
 	private Xa classXa_noiDKKS;
+	
+	@Column(name="xa_maxa",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="noidktt_id")
 	private Xa classXa_noiDKTT;
+	
+	@Column(name="madt",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="tokhai_dantoc_id1")
 	private DanToc classDanToc;
+	
+	@Column(name="matg",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="tokhai_tongiao_id2")
 	private TonGiao classTonGiao;
+	
+	@Column(name="maqt",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="tokhai_quoctich_id3")
 	private QuocTich classQuocTich;
+	
+	@Column(name="mank",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="tokhai_nhankhauCha_id4")
 	private NhanKhau classNhanKhau_Cha;
+	
+	@Column(name="nha_mank",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="tokhai_nhankhauMe_id5")
 	private NhanKhau classNhanKhau_Me;
+	
+	@Column(name="nha_mank2",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="tokhai_nhankhauNgdk_id6")
 	private NhanKhau classNhanKhau_NgDK;
+	
+	@Column(name="matt",nullable=false)
+	@ManyToOne
+	@JoinColumn(name="tokhai_tinhtrang_id7")
 	private TinhTrangToKhai classTinTrangToKhai;
+	
+	@Column(name="soks",nullable=false)
+	@OneToMany(mappedBy = "classToKhai", cascade = CascadeType.ALL)
 	private List<GiayKhaiSinh> listGiayKhaiSinh;
 	public ToKhai() {
 		super();
@@ -57,8 +114,7 @@ public class ToKhai {
 		this.classTinTrangToKhai = classTinTrangToKhai;
 		this.listGiayKhaiSinh = listGiayKhaiSinh;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_tinhtrang_id")
+	
 	public TinhTrangToKhai getClassTinTrangToKhai() {
 		return classTinTrangToKhai;
 	}
@@ -67,7 +123,7 @@ public class ToKhai {
 		this.classTinTrangToKhai = classTinTrangToKhai;
 	}
 
-	@Id
+	
 	public String getMaToKhai() {
 		return maToKhai;
 	}
@@ -122,64 +178,56 @@ public class ToKhai {
 	public void setQuanHeVoiNgDK(String quanHeVoiNgDK) {
 		this.quanHeVoiNgDK = quanHeVoiNgDK;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_xa1_id")
+	
 	public Xa getClassXa_noiDKKS() {
 		return classXa_noiDKKS;
 	}
 	public void setClassXa_noiDKKS(Xa classXa_noiDKKS) {
 		this.classXa_noiDKKS = classXa_noiDKKS;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_xa2_id")
+	
 	public Xa getClassXa_noiDKTT() {
 		return classXa_noiDKTT;
 	}
 	public void setClassXa_noiDKTT(Xa classXa_noiDKTT) {
 		this.classXa_noiDKTT = classXa_noiDKTT;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_dantoc_id")
+	
 	public DanToc getClassDanToc() {
 		return classDanToc;
 	}
 	public void setClassDanToc(DanToc classDanToc) {
 		this.classDanToc = classDanToc;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_tongiao_id")
+	
 	public TonGiao getClassTonGiao() {
 		return classTonGiao;
 	}
 	public void setClassTonGiao(TonGiao classTonGiao) {
 		this.classTonGiao = classTonGiao;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_quoctich_id")
+	
 	public QuocTich getClassQuocTich() {
 		return classQuocTich;
 	}
 	public void setClassQuocTich(QuocTich classQuocTich) {
 		this.classQuocTich = classQuocTich;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_nhankhau1_id")
+	
 	public NhanKhau getClassNhanKhau_Cha() {
 		return classNhanKhau_Cha;
 	}
 	public void setClassNhanKhau_Cha(NhanKhau classNhanKhau_Cha) {
 		this.classNhanKhau_Cha = classNhanKhau_Cha;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_nhankhau2_id")
+	
 	public NhanKhau getClassNhanKhau_Me() {
 		return classNhanKhau_Me;
 	}
 	public void setClassNhanKhau_Me(NhanKhau classNhanKhau_Me) {
 		this.classNhanKhau_Me = classNhanKhau_Me;
 	}
-	@ManyToOne
-	@JoinColumn(name="tokhai_nhankhau3_id")
+	
 	public NhanKhau getClassNhanKhau_NgDK() {
 		return classNhanKhau_NgDK;
 	}
@@ -189,7 +237,7 @@ public class ToKhai {
 	public List<GiayKhaiSinh> getListGiayKhaiSinh() {
 		return listGiayKhaiSinh;
 	}
-	@OneToMany(mappedBy = "classToKhai", cascade = CascadeType.ALL)
+	
 	public void setListGiayKhaiSinh(List<GiayKhaiSinh> listGiayKhaiSinh) {
 		this.listGiayKhaiSinh = listGiayKhaiSinh;
 	}

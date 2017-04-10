@@ -9,7 +9,7 @@ public class ControllerDangNhap {
 	public String logIn(){
 		
 		
-		return "Login";
+		return "dondangkykethon_list";
 	}
 
 }
