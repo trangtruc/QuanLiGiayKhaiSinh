@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+	 <nav th:replace="layout :: header"></nav>
+	<div class="container main-content list">
+		<form action="#" th:action="@{/giaykhaisinh/caplai}" method="GET">
+			<div class="form-group">
+				 <h2 align="center" style="background-color: aqua; "><center><b>Cập nhật thông tin khai sinh</b></center></h2>
+			</div>
+			<div class="form-group">
+				 <label>Quận/Huyện: </label>
+                <select name="quanhuyen">
+                    <option>Quận Ninh Kiều</option>
+                    <option>Quận Thốt Nốt</option>
+                    <option>Quận Thới Lai</option>
+                    <option>Quận Ô Môn</option>
+                </select>
+			</div>
+			<div class="form-group">
+				<label>Cơ quan tiếp nhận: </label>
+                <select name="coquan">
+                    <option>UBND Phường Tân An</option>
+                    <option>UBND Phường An Lạc</option>
+                    <option>UBND Phường Xuân Khánh</option>
+                    <option>UBND Phường Hưng Lợi</option>
+                </select>
+			</div>
+			 <div class="form-group">
+				<label>Ngày lập: </label>
+                  <input type="date" class="form-control" id="ngaylap"  />
+                
+			</div>
+			<div class="form-group">
+				 <h2 align="center" style="background-color: aqua; "><center><b>Thông tin người được khai sinh</b></center></h2>
+			</div> 	
+			<div class="form-group">
+                <label>
+                    Họ và Tên:
+                </label>
+             
+                  <input type="text" class="form-control" id="hoten" placeholder="Nhập vào họ tên" />
+              
+            </div>
+
+            <div class="form-group">
+                <label >
+                    Ngày Tháng Năm Sinh:
+                </label>
+               
+                  <input type="date" class="form-control" id="ngaythangnamsinh" />
+                
+            </div>
+
+            <div class="form-group">
+                <label >
+                    Nơi Sinh:
+                </label>
+                
+                  <input type="text" class="form-control" id="noisinh" placeholder="Nhập vào nơi sinh" />
+                </div>
+           
+
+            <div class="form-group">
+                <label>Giới Tính: </label>
+              
+                <select name="quanhe">
+                    <option>Nữ</option>
+                    <option>Nam</option>
+                </select>
+              
+            </div>
+
+            <div class="form-group">
+                <label >
+                    Dân Tộc:
+                </label>
+               
+                  <input type="text" class="form-control" id="dantoc" placeholder="Nhập vào dân tộc" />
+               
+            </div>
+
+             <div class="form-group">
+                <label >
+                    Quốc Tịch:
+                </label>
+                
+                  <input type="text" class="form-control" id="quoctich" placeholder="Nhập vào quốc tịch" />
+            
+            </div>
+
+             <div class="form-group">
+                <label>
+                    Nơi Thường Trú/Tạm Trú:
+                </label>
+               
+                  <input type="text" class="form-control" id="noithuongtrutamtru" placeholder="Nhập vào nơi thường trú/tạm trú" />
+             
+            </div>
+              <div class="form-group">
+				 <h2 align="center" style="background-color: aqua; "><center><b>Thông tin mẹ</b></center></h2>
+			</div>
+             <div class="form-group">
+				<label>Nhập chứng minh nhân dân của mẹ hoặc mã nhân khẩu: </label>
+                  <input type="text" class="form-control" id="thongtinme" placeholder="Nhập chứng minh nhân dân của mẹ, hoặc mã nhân khẩu của mẹ" />
+			</div>
+              <div class="form-group">
+				 <h2 align="center" style="background-color: aqua; "><center><b>Thông tin cha</b></center></h2>
+			</div>
+             <div class="form-group">
+				<label>Nhập chứng minh nhân dân của cha hoặc mã nhân khẩu: </label>
+                  <input type="text" class="form-control" id="thongtincha" placeholder="Nhập chứng minh nhân dân của cha, hoặc mã nhân khẩu của cha" />
+			</div>
+			<div class="form-group">
+				 <h2 align="center" style="background-color: aqua; "><center><b>Thông tin khai sinh</b></center></h2>
+			</div>
+			<div class="form-group">
+				<label>Nhập chứng minh nhân dân của người đi đăng ký hoặc mã nhân khẩu: </label>
+                  <input type="text" class="form-control" id="thongtinnguoididangky" placeholder="Nhập chứng minh nhân dân của người đi đăng ký, hoặc mã nhân khẩu" />
+			</div>
+			 <div class="form-group"> 
+                <div class="col-sm-4"></div>  
+                <div class="col-sm-2">
+                  <button type="submit" class="btn btn-primary">Quay Về</button>
+                </div>
+                <div class="col-sm-1"></div>   
+                <div class="col-sm-4">
+                  <button type="reset" class="btn btn-primary">Tiếp Theo</button>
+                </div>
+              </div>
+			
+           
+           
+		</form>
+	</div>
+
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+    <nav th:replace="layout :: header"></nav>
+    <div class="container main-content list">
+    	<div th:if="${success}" class="row alert alert-success alert-dismissible">
+	        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <span th:text="${success}"></span>
+	    </div>
+    	<br/><br/><br/><br/><br/>
+    	<th:block th:if="${#lists.isEmpty(dondangkykethons)}">
+		    <h3>No dondangkykethons</h3>
+		</th:block>
+		
+        <th:block th:unless="${#lists.isEmpty(dondangkykethons)}">
+            <div class="row">
+           
+                <form class="form-inline pull-right" action="#" th:action="@{/dondangkykethon/search}" method="GET">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="q" 
+                            placeholder="Type dondangkykethon name..." />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+                
+            </div>
+            <br/>
+            <div class="row">
+             <h1>Danh SÃ¡ch Ä�Æ¡n Ä�Ã£ Ä�Äƒng KÃ½</h1>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>TÃªn NgÆ°á»�i Ä�Äƒng KÃ½</th>
+                            <th>Chá»©ng Minh NhÃ¢n DÃ¢n</th>
+                            <th>NgÃ y Ä�Äƒng KÃ½</th>
+                            <th>NgÃ y Háº¹n</th>
+                            <th>NGCN</th>
+                            <th>Ghi ChÃº</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="dondangkykethon,iterStat : ${dondangkykethons}">
+                            <td th:text="${iterStat.count}"></td>
+                            <td th:text="${dondangkykethon.name}"></td>
+                            <td th:text="${dondangkykethon.cmnd}"></td>
+                            <td th:text="${dondangkykethon.ngaydangky}"></td>
+                            <td th:text="${dondangkykethon.ngayhen}"></td>
+                            <td th:text="${dondangkykethon.ngaynhan}"></td>
+                            <td th:text="${dondangkykethon.ghichu}"></td>
+                            <td><a th:href="@{/dondangkykethon/{id}/edit(id=${dondangkykethon.id})}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            <td><a th:href="@{/dondangkykethon/{id}/delete(id=${dondangkykethon.id})}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </th:block>
+    </div>
+    <!-- /.container -->
+<br/><br/><br/><br/><br/>
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>
