@@ -1,23 +1,27 @@
-#first {
-    width: 1100px;
-    height: 150px;
-    border:1px solid black;
-}
-#second{
-    width: 1100px;
-    height: 450px;
-    background-color:azure;
+.main-content {
+	min-height: 500px;
+	max-width: 700px;
+	margin-top: 70px;
 }
 
-#second1{
-    width: 1100px;
-    height: 1800px;
-    background-color:azure;
+.list {
+	max-width: 800px;
 }
 
-
-#second2{
-    width: 1100px;
-    height: 2100px;
-    background-color:azure;
+.form {
+	max-width: 450px;
 }
+
+.row {
+	margin-top: 30px;
+}
+
+.table th, td {
+   text-align: center;   
+}
+
+.field-error {
+	border: 1px solid #ff0000;
+	margin-bottom: 10px;	
+}
+
