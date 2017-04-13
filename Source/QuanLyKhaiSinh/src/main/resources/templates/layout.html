@@ -6,28 +6,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<title>Spring WebsiteFurniture</title>
+<title>QUẢN LÝ KHAI SINH</title>
 
 <link href="../static/images/logo.png" th:href="@{/images/logo.png}"
-	rel="shortcut icon" />
+    rel="shortcut icon" />
 
 <!-- Bootstrap -->
 <link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
-	rel="stylesheet" />
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+    rel="stylesheet" />
 <!-- Custom style -->
 <link href="../static/css/style.css" th:href="@{/css/style.css}"
-	rel="stylesheet" />
+    rel="stylesheet" />
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
-	th:src="@{/webjars/jquery/1.12.4/jquery.min.js}"></script>
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+    th:src="@{/webjars/jquery/1.12.4/jquery.min.js}"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,38 +37,36 @@
     <![endif]-->
 </head>
 <body>
-	<nav th:fragment="header"
-		class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#menu">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-			</div>
-			<div class="collapse navbar-collapse" id="menu">
-				<ul class="nav navbar-nav">
-					<li><a th:href="@{/dondangkykethon/create}">Đăng Kí Kết
-							Hôn</a></li>
-					<li><a th:href="@{/dondangkykethon}">Xem Danh Sách Đã Đăng
-							Ký</a></li>
-					<li><a th:href="@{/honnhan/create}">Ghi Thông Tin Vào Sổ
-							Hôn Nhân</a></li>
-					<li><a th:href="@{/honnhan}">Hôn Nhân Đã Đăng Ký</a></li>
-				</ul>
-			</div>
-		</div>
+
+	<nav th:fragment="header" class="navbar navbar-inverse">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">QUẢN LÝ KHAI SINH</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="dropdown">
+	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Đăng Ký Khai Sinh
+	        <span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="#">Đăng Ký Mới Giấy Khai Sinh</a></li>
+	          <li><a href="#">Cấp Lại Giấy Khai Sinh</a></li>
+	          <li><a href="#">Cập Nhật Giấy Khai Sinh</a></li>
+	        </ul>
+	      </li>
+	      <li class="dropdown">
+	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Xem Giấy Khai Sinh
+	        <span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="#">Xem Giấy Khai Sinh Đã Duyệt</a></li>
+	          <li><a href="#">Xem Giấy Khai Sinh Chưa Duyệt</a></li>
+	        </ul>
+	      </li>
+	    </ul>
+	  </div>
 	</nav>
-	<footer th:fragment="footer" >
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3 text-center">
-					<em>Copyright &copy; Nguyễn Văn Huy</em>
-				</div>
-			</div>
-		</div>
-	</footer>
+
+    <footer th:fragment="footer" class="container"> 
+        &copy; 2017 Java Nâng Cao
+    </footer>
 </body>
 </html>
