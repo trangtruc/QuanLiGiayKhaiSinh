@@ -7,10 +7,6 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <title>QUẢN LÝ KHAI SINH</title>
-
-<link href="../static/images/logo.png" th:href="@{/images/logo.png}"
-    rel="shortcut icon" />
-
 <!-- Bootstrap -->
 <link
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,6 +14,7 @@
     rel="stylesheet" />
 <!-- Custom style -->
 <link href="../static/css/style.css" th:href="@{/css/style.css}"
+
     rel="stylesheet" />
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -38,35 +35,47 @@
 </head>
 <body>
 
-	<nav th:fragment="header" class="navbar navbar-inverse">
+	<nav th:fragment="header" class="navbar navbar-inverse" >
 	  <div class="container">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">QUẢN LÝ KHAI SINH</a>
+	      <a class="navbar-brand" th:href="@{/giaykhaisinh/index}" style="font-size:25px;">
+	      <span class="glyphicon glyphicon-home" style="color:white;"></span>
+	      </a>
 	    </div>
 	    <ul class="nav navbar-nav">
 	      <li class="dropdown">
-	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Đăng Ký Khai Sinh
+	        <a class="dropdown-toggle" data-toggle="dropdown" 
+	        style="color:white;font-size:16px; ">ĐĂNG KÝ KHAI SINH
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="#">Đăng Ký Mới Giấy Khai Sinh</a></li>
-	          <li><a href="#">Cấp Lại Giấy Khai Sinh</a></li>
-	          <li><a href="#">Cập Nhật Giấy Khai Sinh</a></li>
+	          <li><a th:href="@{/giaykhaisinh/DangKyKhaiSinh}">Đăng Ký Giấy Khai Sinh</a></li>
+	          <li><a th:href="@{/giaykhaisinh/CapLaiKhaiSinh}">Cấp Lại Giấy Khai Sinh</a></li>
+	          <li><a th:href="@{/giaykhaisinh/CapNhatKhaiSinh}">Cập Nhật Giấy Khai Sinh</a></li>
 	        </ul>
 	      </li>
 	      <li class="dropdown">
-	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Xem Giấy Khai Sinh
+	        <a class="dropdown-toggle" data-toggle="dropdown" 
+	        style="color:white; font-size:16px;">XEM GIẤY KHAI SINH
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="#">Xem Giấy Khai Sinh Đã Duyệt</a></li>
-	          <li><a href="#">Xem Giấy Khai Sinh Chưa Duyệt</a></li>
+	          <li><a th:href="@{/giaykhaisinh/XemGiayKSDaDuyet}">Xem Giấy Khai Sinh Đã Duyệt</a></li>
+	          <li><a th:href="@{/giaykhaisinh/XemGiayKSChuaDuyet}">Xem Giấy Khai Sinh Chưa Duyệt</a></li>
 	        </ul>
 	      </li>
+	      <li>
+	        <a th:href="@{/giaykhaisinh/DangNhapCB}"
+	         style="color:white; font-size:16px;">ĐĂNG NHẬP</a>
+	      </li>
 	    </ul>
+	    
 	  </div>
 	</nav>
-
-    <footer th:fragment="footer" class="container"> 
-        &copy; 2017 Java Nâng Cao
+	
+    <footer th:fragment="footer" class="container">
+    <br></br> 
+    <b>
+        &Copyright; 2017 JAVA NÂNG CAO (IVS)
+    </b>
     </footer>
 </body>
 </html>
