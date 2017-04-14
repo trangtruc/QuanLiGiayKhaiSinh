@@ -7,8 +7,8 @@
 <body>
 	 <nav th:replace="layout :: header"></nav>
 	<div class="container main-content list">
-		<form action="#" th:action="@{/giaykhaisinh/caplai}" method="GET">
-			
+		<form action="#" th:action="@{/giaykhaisinh/CapLaiKhaiSinh}" method="GET">
+			<h2 align="center" style="background-color: aqua; "><center><b>CẤP LẠI GIẤY KHAI SINH</b></center></h2>
              <div class="form-group">
                 <label>
                     Giấy Khai Sinh Số:
@@ -19,7 +19,7 @@
             </div>
                <div class="form-group">
                 <label>
-                    Ngày Tháng Năm:
+                    Ngày/Tháng/Năm:
                 </label>
                 
                   <input type="date" class="form-control" id="ngaythangnam" />
@@ -29,15 +29,14 @@
                 <label >
                     Lý Do Cấp Lại:
                 </label>
-               
-                  <textarea type="text"  class="form-control">
-                  </textarea>
+                 <textarea class="form-control" name="lydo" cols="40" rows="5"></textarea>
+                  
                
             </div>
             <div class="form-group"> 
                 <div class="col-sm-4"></div>  
                 <div class="col-sm-2">
-                  <button type="reset" class="btn btn-primary">Quay Về</button>
+                  <button type="submit" class="btn btn-primary">Quay Về</button>
                 </div>
                 <div class="col-sm-1"></div>   
                 <div class="col-sm-4">

@@ -19,10 +19,10 @@
         <th:block th:unless="${#lists.isEmpty(giaykhaisinh)}">
             <div class="row">
            
-                <form class="form-inline pull-right" action="#" th:action="@{/giaykhaisinh/dangky}" method="GET">
+                <form class="form-inline pull-right" action="#" th:action="@{/giaykhaisinh/DangKyKhaiSinh}" method="GET">
                     <div class="form-group">
                         <input type="text" class="form-control" name="q" 
-                            placeholder="Type dondangkykethon name..." />
+                            placeholder="Type dondangkykhaisinh name..." />
                     </div>
                     <button type="submit" class="btn btn-primary">Search</button>
                 </form>

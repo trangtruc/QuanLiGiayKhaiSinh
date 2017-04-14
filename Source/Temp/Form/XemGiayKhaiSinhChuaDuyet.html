@@ -10,7 +10,8 @@
     <h1 style="background-color:aqua;" align="center"><b>GIẤY KHAI SINH CHƯA DUYỆT</b></h1>
     
         <div class="row">
-            <form class="form-inline" align="center" action="#" method="GET">
+            <form class="form-inline" align="center" action="#"
+            th:action="@{/giaykhaisinh/XemGiayKSChuaDuyet}" method="GET">
             	<label>Mã Số Khai Sinh:</label>
                 <div class="form-group">
                     <input type="text" class="form-control" name="q" placeholder="Nhập mã số khai sinh..." />
@@ -40,8 +41,8 @@
                         <td>Bệnh Viện Phụ Sản Quốc Tế Phương Châu, TPCT</td>
                         <td>Việt Nam</td>
                         <td>Kinh</td>
-                        <td><a href="#">Duyệt</a></td>
-                        <td><a href="#">Xem Chi Tiết</a></td>
+                        <td><button type="submit" class="btn btn-primary">Duyệt</button></td>
+                        <td><a th:href="@{/giaykhaisinh/XemChiTietKhaiSinh}">Xem Chi Tiết</a></td>
                     </tr>
                     
                 </tbody>
