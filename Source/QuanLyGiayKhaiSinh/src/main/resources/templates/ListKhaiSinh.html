@@ -44,8 +44,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="giaykhaisinh,iterStat : ${giaykhaisinh}">
-                            
+                        <tr th:each="giaykhaisinh,iterStat : ${danhsachgiaykhaisinh}">                        
                             <td th:text="${giaykhaisinh.sokhaisinh}"></td>
                             <td th:text="${giaykhaisinh.classtokhai}"></td>
                             <td th:text="${giaykhaisinh.ngaycap}"></td>
