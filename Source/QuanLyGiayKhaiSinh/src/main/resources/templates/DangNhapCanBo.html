@@ -10,12 +10,18 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <nav th:replace="layout :: header"></nav>
-
-    <div class="container main-content form">
-    <h1 style="font-size:30px;"><b>ĐĂNG NHẬP TÀI KHOẢN</b></h1>
-        <div class="row">
+ 	
+	<div class="panel panel-info">
+	  <div class="panel-heading" align="center" style="font-size:32px;"><b>HỆ THỐNG QUẢN LÝ GIẤY KHAI SINH</b></div>
+	</div>
+	  
+    <div class="container">
+   	 <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8" style="border:1px gray solid;">
           <form  th:action="@{/DangNhapCB}" method="POST" >
+           <h1 style="font-size:26px;" align="center"><b>ĐĂNG NHẬP TÀI KHOẢN</b></h1>
+           
             <div class="form-group">
               <lable style="font-size:17px;"><b><i>Mã Cán Bộ:</i></b></lable>
              <input type="text" id="email" name="email"  th:placeholder="Email"
@@ -27,12 +33,17 @@
 				id="password" name="password" class="form-control" />
             </div>
             
-            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
-            <button type="submit" class="btn btn-primary">Quay Về</button>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom:10px;">Đăng Nhập</button>
+            </div>
+            <div class="col-sm-5">
+            </div>
           </form>
+          </div>
+          <div class="col-sm-3"></div>
         </div>
     </div><!-- /.container -->
 
-    <footer th:replace="layout :: footer"></footer>
 </body>
 </html>
