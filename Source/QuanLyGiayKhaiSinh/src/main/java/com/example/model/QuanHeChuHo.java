@@ -1,5 +1,7 @@
 package com.example.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,9 +16,12 @@ public class QuanHeChuHo {
 	
 	
 	
-//	@OneToMany(mappedBy = "classQuanHeChuHo", cascade = CascadeType.ALL)
-//	private List<NhanKhau> listNhanKhau;
+	@OneToMany(mappedBy = "classQuanHeChuHo", cascade = CascadeType.ALL)
+	private List<NhanKhau> listNhanKhau;
 	
+	
+	@OneToMany(mappedBy = "classQuanHeVoiNgDK", cascade = CascadeType.ALL)
+	private List<ToKhai> listToKhai;
 	
 	
 	public QuanHeChuHo() {

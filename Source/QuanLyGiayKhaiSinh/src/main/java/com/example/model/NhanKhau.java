@@ -51,12 +51,12 @@ public class NhanKhau {
 	
 	@ManyToOne
 	@JoinColumn(name="nhankhau_tg_id")
-	private TonGiao classTonGiao;
+	private TonGiao classTonGiao2;
 	
 
 	@ManyToOne
 	@JoinColumn(name="nhankhau_qt_id")
-	private QuocTich classQuocTich;
+	private QuocTich classQuocTich2;
 	
 	
 	@ManyToOne
@@ -87,7 +87,7 @@ public class NhanKhau {
 	}
 
 	public NhanKhau(String hoTenNhanKhau, String gioiTinh, Date ngaySinh, String ngaySinhBC, String cMND,
-			Date ngayCapCMND, String noiCapCMND, DanToc classDanToc, TonGiao classTonGiao, QuocTich classQuocTich,
+			Date ngayCapCMND, String noiCapCMND, DanToc classDanToc, TonGiao classTonGiao2, QuocTich classQuocTich2,
 			QuanHeChuHo classQuanHeChuHo, Xa classXa, List<ToKhai> listToKhai_cha, List<ToKhai> listToKhai_me,
 			List<ToKhai> listToKhai_ngdk, SoHoKhau classSoHoKhau) {
 		super();
@@ -99,8 +99,8 @@ public class NhanKhau {
 		this.ngayCapCMND = ngayCapCMND;
 		this.noiCapCMND = noiCapCMND;
 		this.classDanToc = classDanToc;
-		this.classTonGiao = classTonGiao;
-		this.classQuocTich = classQuocTich;
+		this.classTonGiao2 = classTonGiao2;
+		this.classQuocTich2 = classQuocTich2;
 		this.classQuanHeChuHo = classQuanHeChuHo;
 		this.classXa = classXa;
 		this.listToKhai_cha = listToKhai_cha;
@@ -181,20 +181,20 @@ public class NhanKhau {
 		this.classDanToc = classDanToc;
 	}
 
-	public TonGiao getClassTonGiao() {
-		return classTonGiao;
+	public TonGiao getClassTonGiao2() {
+		return classTonGiao2;
 	}
 
-	public void setClassTonGiao(TonGiao classTonGiao) {
-		this.classTonGiao = classTonGiao;
+	public void setClassTonGiao2(TonGiao classTonGiao2) {
+		this.classTonGiao2 = classTonGiao2;
 	}
 
-	public QuocTich getClassQuocTich() {
-		return classQuocTich;
+	public QuocTich getClassQuocTich2() {
+		return classQuocTich2;
 	}
 
-	public void setClassQuocTich(QuocTich classQuocTich) {
-		this.classQuocTich = classQuocTich;
+	public void setClassQuocTich2(QuocTich classQuocTich2) {
+		this.classQuocTich2 = classQuocTich2;
 	}
 
 	public QuanHeChuHo getClassQuanHeChuHo() {
@@ -245,6 +245,7 @@ public class NhanKhau {
 		this.classSoHoKhau = classSoHoKhau;
 	}
 
+	
 	
 
 }

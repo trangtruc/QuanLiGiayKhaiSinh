@@ -46,11 +46,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.
 			authorizeRequests()
 				.antMatchers("/").permitAll()
-				.antMatchers("/DangNhapCB").permitAll()
+				.antMatchers("/").permitAll()
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
 				.authenticated().and().csrf().disable().formLogin()
-				.loginPage("/DangNhapCB").failureUrl("/DangNhapCB?error=true")
+				.loginPage("/DangNhapCB").failureUrl("/?error=true")
 				.defaultSuccessUrl("/giaykhaisinh/index")
 				.usernameParameter("email")
 				.passwordParameter("password")

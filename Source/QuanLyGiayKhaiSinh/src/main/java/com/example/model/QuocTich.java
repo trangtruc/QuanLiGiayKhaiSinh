@@ -17,7 +17,7 @@ public class QuocTich {
 	@OneToMany(mappedBy = "classQuocTich", cascade = CascadeType.ALL)
 	private List<ToKhai> listToKhai;
 	
-	@OneToMany(mappedBy = "classQuocTich", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "classQuocTich2", cascade = CascadeType.ALL)
 	private List<NhanKhau> listNhanKhau;
 
 	public QuocTich() {
@@ -62,8 +62,7 @@ public class QuocTich {
 	public void setListNhanKhau(List<NhanKhau> listNhanKhau) {
 		this.listNhanKhau = listNhanKhau;
 	}
+
 	
 	
-	
-//	
 }

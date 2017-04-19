@@ -21,7 +21,7 @@ public class ChucVu {
 	
 	@OneToMany(mappedBy = "classChucVu", cascade = CascadeType.ALL)
 	@Column(name="macb",nullable=false)
-	private List<CanBo> listCanBo;
+	private List<User> listUser;
 	
 	
 	public ChucVu() {
@@ -29,16 +29,11 @@ public class ChucVu {
 	}
 
 
-	
-
-
-	public ChucVu(String tenChucVu, List<CanBo> listCanBo) {
+	public ChucVu(String tenChucVu, List<User> listUser) {
 		super();
 		this.tenChucVu = tenChucVu;
-		this.listCanBo = listCanBo;
+		this.listUser = listUser;
 	}
-
-
 
 
 	public int getMaChucVu() {
@@ -61,17 +56,19 @@ public class ChucVu {
 	}
 
 
-	public List<CanBo> getListCanBo() {
-		return listCanBo;
+	public List<User> getListUser() {
+		return listUser;
 	}
 
 
-	public void setListCanBo(List<CanBo> listCanBo) {
-		this.listCanBo = listCanBo;
+	public void setListUser(List<User> listUser) {
+		this.listUser = listUser;
 	}
+	
+
 
 	
-	
-	
+
+
 
 }

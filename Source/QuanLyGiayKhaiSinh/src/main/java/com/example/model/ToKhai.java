@@ -34,8 +34,9 @@ public class ToKhai {
 	@Column(name="ghichu",nullable=false)
 	private String ghiChu;
 	
-	@Column(name="quanhevoingdk",nullable=false)
-	private String quanHeVoiNgDK;
+	@ManyToOne
+	@JoinColumn(name="quanhengdk_id")
+	private QuanHeChuHo classQuanHeVoiNgDK;
 	
 	
 	@ManyToOne
@@ -46,10 +47,10 @@ public class ToKhai {
 	@JoinColumn(name="diachitt_id")
 	private Xa classXa2;
 	
-	@ManyToOne
-	@JoinColumn(name="tinhtrangtokhai_id")
-	private TinhTrangToKhai classTinhTrangToKhai;
-	
+//	@ManyToOne
+//	@JoinColumn(name="tinhtrangtokhai_id")
+//	private TinhTrangToKhai classTinhTrangToKhai;
+//	
 	
 	@ManyToOne
 	@JoinColumn(name="dantoc_id")
@@ -84,9 +85,9 @@ public class ToKhai {
 
 
 	public ToKhai(Date ngayLap, String hoTenNguoiKS, String gioiTinh, Date ngaySinh, String ngaySinhBC, String noiSinh,
-			String ghiChu, String quanHeVoiNgDK, Xa classXa, Xa classXa2, TinhTrangToKhai classTinhTrangToKhai,
-			DanToc classDanToc, QuocTich classQuocTich, TonGiao classTonGiao, NhanKhau classNhanKhau_Cha,
-			NhanKhau classNhanKhau_Me, NhanKhau classNhanKhau_Ngdk) {
+			String ghiChu, QuanHeChuHo classQuanHeVoiNgDK, Xa classXa, Xa classXa2, DanToc classDanToc,
+			QuocTich classQuocTich, TonGiao classTonGiao, NhanKhau classNhanKhau_Cha, NhanKhau classNhanKhau_Me,
+			NhanKhau classNhanKhau_Ngdk) {
 		super();
 		this.ngayLap = ngayLap;
 		this.hoTenNguoiKS = hoTenNguoiKS;
@@ -95,10 +96,9 @@ public class ToKhai {
 		this.ngaySinhBC = ngaySinhBC;
 		this.noiSinh = noiSinh;
 		this.ghiChu = ghiChu;
-		this.quanHeVoiNgDK = quanHeVoiNgDK;
+		this.classQuanHeVoiNgDK = classQuanHeVoiNgDK;
 		this.classXa = classXa;
 		this.classXa2 = classXa2;
-		this.classTinhTrangToKhai = classTinhTrangToKhai;
 		this.classDanToc = classDanToc;
 		this.classQuocTich = classQuocTich;
 		this.classTonGiao = classTonGiao;
@@ -188,13 +188,13 @@ public class ToKhai {
 	}
 
 
-	public String getQuanHeVoiNgDK() {
-		return quanHeVoiNgDK;
+	public QuanHeChuHo getClassQuanHeVoiNgDK() {
+		return classQuanHeVoiNgDK;
 	}
 
 
-	public void setQuanHeVoiNgDK(String quanHeVoiNgDK) {
-		this.quanHeVoiNgDK = quanHeVoiNgDK;
+	public void setClassQuanHeVoiNgDK(QuanHeChuHo classQuanHeVoiNgDK) {
+		this.classQuanHeVoiNgDK = classQuanHeVoiNgDK;
 	}
 
 
@@ -215,16 +215,6 @@ public class ToKhai {
 
 	public void setClassXa2(Xa classXa2) {
 		this.classXa2 = classXa2;
-	}
-
-
-	public TinhTrangToKhai getClassTinhTrangToKhai() {
-		return classTinhTrangToKhai;
-	}
-
-
-	public void setClassTinhTrangToKhai(TinhTrangToKhai classTinhTrangToKhai) {
-		this.classTinhTrangToKhai = classTinhTrangToKhai;
 	}
 
 
@@ -286,11 +276,8 @@ public class ToKhai {
 	public void setClassNhanKhau_Ngdk(NhanKhau classNhanKhau_Ngdk) {
 		this.classNhanKhau_Ngdk = classNhanKhau_Ngdk;
 	}
-	
-	
-	
-	
-	
+
+
 	
 	
 }

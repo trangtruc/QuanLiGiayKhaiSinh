@@ -21,7 +21,7 @@ public class Xa {
 	private Huyen classHuyen;
 	
 	@OneToMany(mappedBy = "classXa", cascade = CascadeType.ALL)
-	private List<CanBo> listCanBo;
+	private List<User> listUser;
 	
 	@OneToMany(mappedBy = "classXa", cascade = CascadeType.ALL)
 	private List<SoHoKhau> listSoHoKhau;
@@ -39,12 +39,12 @@ public class Xa {
 		super();
 	}
 
-	public Xa(String tenXa, Huyen classHuyen, List<CanBo> listCanBo, List<SoHoKhau> listSoHoKhau,
-			List<ToKhai> listToKhai, List<ToKhai> listToKhai2, List<NhanKhau> listNhanKhau) {
+	public Xa(String tenXa, Huyen classHuyen, List<User> listUser, List<SoHoKhau> listSoHoKhau, List<ToKhai> listToKhai,
+			List<ToKhai> listToKhai2, List<NhanKhau> listNhanKhau) {
 		super();
 		this.tenXa = tenXa;
 		this.classHuyen = classHuyen;
-		this.listCanBo = listCanBo;
+		this.listUser = listUser;
 		this.listSoHoKhau = listSoHoKhau;
 		this.listToKhai = listToKhai;
 		this.listToKhai2 = listToKhai2;
@@ -75,12 +75,12 @@ public class Xa {
 		this.classHuyen = classHuyen;
 	}
 
-	public List<CanBo> getListCanBo() {
-		return listCanBo;
+	public List<User> getListUser() {
+		return listUser;
 	}
 
-	public void setListCanBo(List<CanBo> listCanBo) {
-		this.listCanBo = listCanBo;
+	public void setListUser(List<User> listUser) {
+		this.listUser = listUser;
 	}
 
 	public List<SoHoKhau> getListSoHoKhau() {

@@ -16,10 +16,9 @@ public class TonGiao {
 	private String tenTonGiao;
 	
 	@OneToMany(mappedBy = "classTonGiao", cascade = CascadeType.ALL)
-	@Column(name="matk",nullable=false)
 	private List<ToKhai> listToKhai;
 	
-	@OneToMany(mappedBy = "classTonGiao", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "classTonGiao2", cascade = CascadeType.ALL)
 	private List<NhanKhau> listNhanKhau;
 
 	public TonGiao() {
@@ -30,6 +29,38 @@ public class TonGiao {
 		super();
 		this.tenTonGiao = tenTonGiao;
 		this.listToKhai = listToKhai;
+		this.listNhanKhau = listNhanKhau;
+	}
+
+	public int getMaTonGiao() {
+		return maTonGiao;
+	}
+
+	public void setMaTonGiao(int maTonGiao) {
+		this.maTonGiao = maTonGiao;
+	}
+
+	public String getTenTonGiao() {
+		return tenTonGiao;
+	}
+
+	public void setTenTonGiao(String tenTonGiao) {
+		this.tenTonGiao = tenTonGiao;
+	}
+
+	public List<ToKhai> getListToKhai() {
+		return listToKhai;
+	}
+
+	public void setListToKhai(List<ToKhai> listToKhai) {
+		this.listToKhai = listToKhai;
+	}
+
+	public List<NhanKhau> getListNhanKhau() {
+		return listNhanKhau;
+	}
+
+	public void setListNhanKhau(List<NhanKhau> listNhanKhau) {
 		this.listNhanKhau = listNhanKhau;
 	}
 	

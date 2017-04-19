@@ -17,48 +17,40 @@ public class TinhTrangToKhai {
 	private String tenTinhTrang;
 	
 	
-	@Column(name="matk",nullable=false)
-	@OneToMany(mappedBy = "classTinhTrangToKhai", cascade = CascadeType.ALL)
-	private List<ToKhai> listToKhai;
+//	@Column(name="matk",nullable=false)
+//	@OneToMany(mappedBy = "classTinhTrangToKhai", cascade = CascadeType.ALL)
+//	private List<ToKhai> listToKhai;
 	
 	public TinhTrangToKhai() {
 		super();
 	}
 
-	
-	public TinhTrangToKhai(String tenTinhTrang, List<ToKhai> listToKhai) {
-		super();
-		this.tenTinhTrang = tenTinhTrang;
-		this.listToKhai = listToKhai;
-	}
+
+public TinhTrangToKhai(String tenTinhTrang) {
+	super();
+	this.tenTinhTrang = tenTinhTrang;
+}
 
 
-	public int getMaTinhTrang() {
-		return maTinhTrang;
-	}
+public int getMaTinhTrang() {
+	return maTinhTrang;
+}
 
-	public void setMaTinhTrang(int maTinhTrang) {
-		this.maTinhTrang = maTinhTrang;
-	}
 
-	public String getTenTinhTrang() {
-		return tenTinhTrang;
-	}
+public void setMaTinhTrang(int maTinhTrang) {
+	this.maTinhTrang = maTinhTrang;
+}
 
-	public void setTenTinhTrang(String tenTinhTrang) {
-		this.tenTinhTrang = tenTinhTrang;
-	}
 
-	public List<ToKhai> getListToKhai() {
-		return listToKhai;
-	}
+public String getTenTinhTrang() {
+	return tenTinhTrang;
+}
 
-	public void setListToKhai(List<ToKhai> listToKhai) {
-		this.listToKhai = listToKhai;
-	}
+
+public void setTenTinhTrang(String tenTinhTrang) {
+	this.tenTinhTrang = tenTinhTrang;
+}
 
 	
-
-
 	
 }
