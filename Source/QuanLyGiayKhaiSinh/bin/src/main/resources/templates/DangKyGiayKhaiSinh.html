@@ -5,188 +5,163 @@
 
 </head>
 <body>
-	<nav th:replace="layout :: header"></nav>
+	 <nav th:replace="layout :: header"></nav>
 	<div class="container main-content list">
-
-		<form  th:action="@{xulythem}"
-			th:object="${toKhai}"  >
-			<div class="form-group">
-				<h2 align="center" style="background-color: aqua; font-size: 30px;">
-					<center>
-						<b>THÔNG TIN KHAI SINH</b>
-					</center>
-				</h2>
+	
+		<form action="#" th:action="@{/giaykhaisinh/DangKyKhaiSinh}" th:object="${ToKhai}" >
+		<div class="form-group">
+				 <h2 align="center" style="background-color: aqua; font-size: 30px;"><center><b>THÔNG TIN KHAI SINH</b></center></h2>
 			</div>
-
-			<div class="form-group">
-				<label>Cơ Quan Tiếp Nhận: </label> 
-				<select th:field="*{classXa}">
-					<option th:each="item:${listXa}" th:value="${item.maXa}" th:text="${item.tenXa}"></option>
-					
-				</select>
+			
+			<div class="row">
+			<div class="form-group col-sm-6">
+				 <label>Quận/Huyện: </label>
+                <select name="quanhuyen">
+                    <option>Quận Ninh Kiều</option>
+                    <option>Quận Thốt Nốt</option>
+                    <option>Quận Thới Lai</option>
+                    <option>Quận Ô Môn</option>
+                </select>
 			</div>
-
+			
+			<div class="form-group col-sm-6">
+				<label>Cơ Quan Tiếp Nhận: </label>
+                <select name="coquan">
+                    <option>UBND Phường Tân An</option>
+                    <option>UBND Phường An Lạc</option>
+                    <option>UBND Phường Xuân Khánh</option>
+                    <option>UBND Phường Hưng Lợi</option>
+                </select>
+			</div>
+			
+			</div>
+			
 			<div class="form-group">
 				<label>Ngày Lập: </label>
-				 <input type="date" class="form-control"
-					th:field="*{ngayLap}" />
+                <input type="date" class="form-control" id="ngaylap"/>
 			</div>
-
+			
 			<hr></hr>
-
+		
 			<div class="form-group">
-				<h2 align="center" style="background-color: aqua; font-size: 24px;">
-					<center>
-						<b><i>THÔNG TIN NGƯỜI ĐI ĐĂNG KÝ KHAI SINH</i></b>
-					</center>
-				</h2>
+				 <h2 align="center" style="background-color: aqua; font-size: 24px; "><center><b><i>THÔNG TIN NGƯỜI ĐI ĐĂNG KÝ KHAI SINH</i></b></center></h2>
 			</div>
 			<div class="form-group">
-				<label>Chứng Minh Nhân Dân Hoặc Mã Nhân Khẩu Của Người Đi
-					Đăng Ký: </label>
-					<select th:field="*{classNhanKhau_Ngdk}">
-					<option th:each="item:${listNhanKhau}" th:value="${item.maNhanKhau}" th:text="${item.hoTenNhanKhau}"></option>
-					
-				</select>
+				<label>Chứng Minh Nhân Dân Hoặc Mã Nhân Khẩu Của Người Đi Đăng Ký: </label>
+                  <input type="text" class="form-control" id="thongtinnguoididangky" placeholder="Nhập chứng minh nhân dân hoặc mã nhân khẩu của người đi đăng ký" />
 			</div>
 			<div class="form-group">
-				<label>Quan Hệ Với Người Được Khai Sinh: </label>
-				 <select th:field="*{classQuanHeVoiNgDK}">
-					<option th:each="item:${listQuanHeChuHo}" th:value="${item.maQuanHe}" th:text="${item.tenQuanHe}"></option>
-					
-				</select>
-
+                <label >Quan Hệ Với Người Được Khai Sinh: </label>
+                
+                <select name="quanhe">
+                    <option>Ông</option>
+                    <option>Bà</option>
+                    <option>Cha</option>
+                    <option>Mẹ</option>
+                    <option>Cô</option>
+                    <option>Chú</option>
+                    <option>Dì</option>
+                    <option>Cậu</option>
+                </select>
+                
+            </div>
+            
+            <hr></hr>
+			
+            <div class="form-group">
+				 <h2 align="center" style="background-color: aqua; font-size: 24px; "><center><b><i>THÔNG TIN NGƯỜI ĐƯỢC KHAI SINH</i></b></center></h2>
 			</div>
-
-			<hr></hr>
-
-			<div class="form-group">
-				<h2 align="center" style="background-color: aqua; font-size: 24px;">
-					<center>
-						<b><i>THÔNG TIN NGƯỜI ĐƯỢC KHAI SINH</i></b>
-					</center>
-				</h2>
+            <div class="form-group">
+				<label>Họ và Tên: </label>
+                  <input type="text" class="form-control" id="hoten" placeholder="Nhập vào Họ và Tên" />
+                
 			</div>
-			<div class="form-group">
-				<label>Họ và Tên: </label> <input type="text" class="form-control"
-					th:field="*{hoTenNguoiKS}" placeholder="Nhập vào Họ và Tên" />
-
+            <div class="form-group">
+				<label>Ngày Sinh: </label>
+                  <input type="date" class="form-control" id="ngaysinh"  />
+                
 			</div>
-			<div class="form-group">
-				<label>Ngày Sinh: </label> <input type="date" class="form-control"
-				th:field="*{ngaySinh}"	 />
-
+            <div class="form-group">
+				<label>Nơi Sinh: </label>
+                  <input type="text" class="form-control" id="noisinh" placeholder="Nhập nơi sinh" />
+                
 			</div>
-			<div class="form-group">
-				<label>Ngày sinh bằng chữ: </label> <input type="text" class="form-control"
-					th:field="*{ngaySinhBC}" placeholder="Nhập ngày sinh bằng chữ" />
-
-			</div>
-			<div class="form-group">
-				<label>Nơi Sinh: </label> <input type="text" class="form-control"
-					th:field="*{noiSinh}" placeholder="Nhập nơi sinh" />
-
-			</div>
-
+			
 			<div class="row">
-				<div class="form-group col-sm-4">
-					<label>Giới Tính: </label> 
-					<select th:field="*{gioiTinh}" >
-						<option  th:value="Nam" th:text="Nam">Nam</option>
-						<option  th:value="Nữ" th:text="Nữ">Nữ</option>
-					</select>
-				</div>
-				<div class="form-group col-sm-4">
-					<label>Dân Tộc: </label> 
-					
-				 <select th:field="*{classDanToc}">
-					<option th:each="item:${listDanToc}" th:value="${item.maDanToc}" th:text="${item.tenDanToc}"></option>
-					
-				</select>
-
-				</div>
-
-				<div class="form-group col-sm-4">
-					<label>Tôn Giáo: </label>
-					 <select th:field="*{classTonGiao}">
-					<option th:each="item:${listTonGiao}" th:value="${item.maTonGiao}" th:text="${item.tenTonGiao}"></option>
-					
-				</select>
-				
-
-				</div>
-				
-				<div class="form-group col-sm-4">
-					<label>Quốc Tịch: </label>
-				 <select th:field="*{classQuocTich}">
-					<option th:each="item:${listQuocTich}" th:value="${item.maQuocTich}" th:text="${item.tenQuocTich}"></option>
+            <div class="form-group col-sm-4">
+                <label >Giới Tính: </label>
+               
+                <select name="gioitinh">
+                    <option>Nữ</option>
+                    <option>Nam</option>
+                </select>             
+            </div>
+            <div class="form-group col-sm-4">
+                <label >Dân Tộc: </label> <select name="dantoc">
+					<option>Kinh</option>
+					<option>Hoa</option>
+					<option>Chăm</option>
+					<option>Khơ Me</option>
 					
 				</select>
 
-				</div>
+			</div> 
+			
+			<div class="form-group col-sm-4">
+                <label >Tôn Giáo: </label>
+                 <select name="tongiao">
+					<option>Không</option>
+					<option>Phật</option>
+					<option>Thiên chúa</option>
+					<option>Tin lành</option>
+					
+				</select>
+
+			</div> 	
 			</div>
-
-			<div class="form-group">
-				<label>Nơi Đăng Ký Thường Trú: </label> 
-				<select th:field="*{classXa2}">
-					<option th:each="item:${listXa}" th:value="${item.maXa}" th:text="${item.tenXa}"></option>
-					
+			
+             <div class="form-group">
+				<label>Nơi Đăng Ký Thường Trú: </label>
+                  <select name="noithuongtru">
+					<option>Cù Lao Dung</option>
+					<option>Tân An</option>
 				</select>
 			</div>
-
+			
 			<hr></hr>
-
-			<div class="form-group">
-				<h2 align="center" style="background-color: aqua; font-size: 24px;">
-					<center>
-						<b><i>THÔNG TIN MẸ</i></b>
-					</center>
-				</h2>
+			
+             <div class="form-group">
+				 <h2 align="center" style="background-color: aqua; font-size: 24px; "><center><b><i>THÔNG TIN MẸ</i></b></center></h2>
 			</div>
-			<div class="form-group">
-				<label>Chứng Minh Nhân Dân hoặc Mã Nhân Khẩu Của Mẹ: </label> 
-				<select th:field="*{classNhanKhau_Me}">
-					<option th:each="item:${listNhanKhau}" th:value="${item.maNhanKhau}" th:text="${item.hoTenNhanKhau}"></option>
-					
-				</select>
+             <div class="form-group">
+				<label>Chứng Minh Nhân Dân hoặc Mã Nhân Khẩu Của Mẹ: </label>
+                  <input type="text" class="form-control" id="thongtinme" placeholder="Nhập chứng minh nhân dân hoặc mã nhân khẩu của mẹ" />
 			</div>
-
+			
 			<hr></hr>
-
-			<div class="form-group">
-				<h2 align="center" style="background-color: aqua; font-size: 24px;">
-					<center>
-						<b><i>THÔNG TIN CHA</i></b>
-					</center>
-				</h2>
+			
+            <div class="form-group">
+				 <h2 align="center" style="background-color: aqua; font-size: 24px; "><center><b><i>THÔNG TIN CHA</i></b></center></h2>
 			</div>
-			<div class="form-group">
+             <div class="form-group">
 				<label>Chứng Minh Nhân Dân hoặc Mã Nhân Khẩu Của Cha: </label>
-				<select th:field="*{classNhanKhau_Cha}">
-					<option th:each="item:${listNhanKhau}" th:value="${item.maNhanKhau}" th:text="${item.hoTenNhanKhau}"></option>
-					
-				</select>
+                  <input type="text" class="form-control" id="thongtincha" placeholder="Nhập chứng minh nhân dân hoặc mã nhân khẩu của cha" />
 			</div>
-			<div class="form-group">
-				<label>Ghi Chú: </label> <input type="text" class="form-control"
-					th:field="*{ghiChu}" placeholder="Nhập ghi chú" />
-
+            
+             <div class="form-group"> 
+                <div class="col-sm-4"></div>  
+                <div class="col-sm-2">
+                  <button type="submit" class="btn btn-primary">Quay Về</button>
+                </div>
+                <div class="col-sm-1"></div>   
+                <div class="col-sm-4">
+                  <button type="submit" class="btn btn-primary">Tiếp Theo</button>
+                </div>
+              </div>
+			</form>
 			</div>
-
-			<div class="form-group">
-				<div class="col-sm-4"></div>
-				<div class="col-sm-2">
-					<button type="reset" class="btn btn-primary">Quay Về</button>
-				</div>
-				<div class="col-sm-1"></div>
-				<div class="col-sm-4">
-					<button type="submit" class="btn btn-primary">Lưu Lại</button>
-				</div>
-			</div>
-		</form>
-	</div>
-
-
+		
+		
 	<footer th:replace="layout :: footer"></footer>
 </body>
 </html>

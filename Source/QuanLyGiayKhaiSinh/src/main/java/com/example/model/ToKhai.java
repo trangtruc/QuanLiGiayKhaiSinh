@@ -1,7 +1,9 @@
 package com.example.model;
 
-import java.util.Date;
 
+
+
+import java.sql.Date;
 
 import javax.persistence.*;
 
@@ -47,10 +49,10 @@ public class ToKhai {
 	@JoinColumn(name="diachitt_id")
 	private Xa classXa2;
 	
-//	@ManyToOne
-//	@JoinColumn(name="tinhtrangtokhai_id")
-//	private TinhTrangToKhai classTinhTrangToKhai;
-//	
+	@ManyToOne
+	@JoinColumn(name="tinhtrangtokhai_id")
+	private TinhTrangToKhai classTinhTrangToKhai;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="dantoc_id")
@@ -85,9 +87,9 @@ public class ToKhai {
 
 
 	public ToKhai(Date ngayLap, String hoTenNguoiKS, String gioiTinh, Date ngaySinh, String ngaySinhBC, String noiSinh,
-			String ghiChu, QuanHeChuHo classQuanHeVoiNgDK, Xa classXa, Xa classXa2, DanToc classDanToc,
-			QuocTich classQuocTich, TonGiao classTonGiao, NhanKhau classNhanKhau_Cha, NhanKhau classNhanKhau_Me,
-			NhanKhau classNhanKhau_Ngdk) {
+			String ghiChu, QuanHeChuHo classQuanHeVoiNgDK, Xa classXa, Xa classXa2,
+			TinhTrangToKhai classTinhTrangToKhai, DanToc classDanToc, QuocTich classQuocTich, TonGiao classTonGiao,
+			NhanKhau classNhanKhau_Cha, NhanKhau classNhanKhau_Me, NhanKhau classNhanKhau_Ngdk) {
 		super();
 		this.ngayLap = ngayLap;
 		this.hoTenNguoiKS = hoTenNguoiKS;
@@ -99,6 +101,7 @@ public class ToKhai {
 		this.classQuanHeVoiNgDK = classQuanHeVoiNgDK;
 		this.classXa = classXa;
 		this.classXa2 = classXa2;
+		this.classTinhTrangToKhai = classTinhTrangToKhai;
 		this.classDanToc = classDanToc;
 		this.classQuocTich = classQuocTich;
 		this.classTonGiao = classTonGiao;
@@ -218,6 +221,16 @@ public class ToKhai {
 	}
 
 
+	public TinhTrangToKhai getClassTinhTrangToKhai() {
+		return classTinhTrangToKhai;
+	}
+
+
+	public void setClassTinhTrangToKhai(TinhTrangToKhai classTinhTrangToKhai) {
+		this.classTinhTrangToKhai = classTinhTrangToKhai;
+	}
+
+
 	public DanToc getClassDanToc() {
 		return classDanToc;
 	}
@@ -277,7 +290,6 @@ public class ToKhai {
 		this.classNhanKhau_Ngdk = classNhanKhau_Ngdk;
 	}
 
+	
 
-	
-	
 }

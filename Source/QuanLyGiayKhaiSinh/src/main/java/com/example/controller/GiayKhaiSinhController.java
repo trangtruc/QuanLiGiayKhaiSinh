@@ -7,30 +7,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import com.example.model.GiayKhaiSinh;
 import com.example.model.ToKhai;
 import com.example.service.DanTocServiceImpl;
-import com.example.service.GiayKhaiSinhServiceImpl;
 import com.example.service.NhanKhauServiceImpl;
 import com.example.service.QuanHeChuHoServiceImpl;
 import com.example.service.QuocTichServiceImpl;
+import com.example.service.TinhTrangToKhaiServiceImpl;
 import com.example.service.ToKhaiServiceImpl;
 import com.example.service.TonGiaoServiceImpl;
 import com.example.service.XaServiceImpl;
 
-
 @Controller
-@RequestMapping(value="/giaykhaisinh")
 public class GiayKhaiSinhController {
-
 	@Autowired
-	QuanHeChuHoServiceImpl qh;
+	QuanHeChuHoServiceImpl qhch;
 	
 	@Autowired
-	ToKhaiServiceImpl tkh;
+	ToKhaiServiceImpl tk;
 	
 	@Autowired
 	XaServiceImpl xa;
@@ -47,68 +43,97 @@ public class GiayKhaiSinhController {
 	@Autowired
 	NhanKhauServiceImpl nk;
 	
+	@Autowired
+	TinhTrangToKhaiServiceImpl tttk;
+	
+	
 	
 	@RequestMapping(value="/DangKyGiayKhaiSinh")
 	public String them(Model model){
 		
 		model.addAttribute("toKhai", new ToKhai());
+		model.addAttribute("listToKhai", tk.lietkeToKhai());
 		model.addAttribute("listXa", xa.lietkeXa());
 		model.addAttribute("listDanToc", dt.lietkeDanToc());
 		model.addAttribute("listTonGiao", tg.lietkeTonGiao());
 		model.addAttribute("listQuocTich", qt.lietkeQuocTich());
-		model.addAttribute("listQuanHeChuHo",qh.lietkeQuanHeChuHo());
+		model.addAttribute("listQuanHeChuHo",qhch.lietkeQuanHeChuHo());
 		model.addAttribute("listNhanKhau",nk.lietkeNhanKhau());
+		model.addAttribute("listTinhTrangToKhai", tttk.lietkeTinhTrangToKhai());
 		
 		return "DangKyGiayKhaiSinh";
 	}
 	
 	
 	@RequestMapping(value="/xulythem")
-	public String xulythem(@Valid ToKhai tk, BindingResult result, RedirectAttributes redirect){
-		if (result.hasErrors()) {
-			return "DangKyGiayKhaiSinh";
-		}
-		tkh.them(tk);
-		redirect.addFlashAttribute("success", "successfully!");
-		return "redirect:/giaykhaisinh/DangKyGiayKhaiSinh";
-	}
-	
-	
-	@RequestMapping(value="/CapLaiKhaiSinh")
-	public String caplai(){
+	public String xulythem(@Valid ToKhai tokhai, BindingResult result, RedirectAttributes redirect){
 		
-		
-		return "CapLaiGiayKhaiSinh";
+		 if (result.hasErrors()) {
+				
+		        return "DangKyGiayKhaiSinh";
+		    }
+		tk.them(tokhai);
+		redirect.addFlashAttribute("success", "Thêm tờ khai thành công!");
+		return "redirect:/XemGiayKhaiSinhChuaDuyet";
 	}
-	
-	@RequestMapping(value="/CapNhatKhaiSinh")
-	public String capnhat(){
-		
-		return "CapNhatGiayKhaiSinh";
-	}
-	
 
-	
-	
 	@RequestMapping(value="/index")
 	public String TrangChu(){
 		return "TrangChu";
 	}
 	
-	@RequestMapping(value="/XemGiayKSChuaDuyet")
-	public String XemGiayKhaiSinhChuaDuyet(){
+
+	@RequestMapping(value="/XemGiayKhaiSinhChuaDuyet")
+	public String DanhSachToKhaiChuaDuyet(Model model){
+		
+		model.addAttribute("listToKhai", tk.lietkeToKhai());
 		return "XemGiayKhaiSinhChuaDuyet";
 	}
 	
-	@RequestMapping(value="/XemGiayKSDaDuyet")
-	public String XemGiayKhaiSinhDaDuyet(){
-		return "XemGiayKhaiSinhDaDuyet";
-	}
-	
-	@RequestMapping(value="/XemChiTietKhaiSinh")
-	public String XemChiTietGiayKhaiSinh(){
+	@RequestMapping(value="/XemChiTietGiayKhaiSinh/{id}/xem")
+	public String XemChiTietToKhai(@PathVariable String id, Model model){
+		
+		model.addAttribute("listXa", xa.lietkeXa());
+		model.addAttribute("listDanToc", dt.lietkeDanToc());
+		model.addAttribute("listTonGiao", tg.lietkeTonGiao());
+		model.addAttribute("listQuocTich", qt.lietkeQuocTich());
+		model.addAttribute("listQuanHeChuHo",qhch.lietkeQuanHeChuHo());
+		model.addAttribute("listNhanKhau",nk.lietkeNhanKhau());
+		model.addAttribute("listTinhTrangToKhai", tttk.lietkeTinhTrangToKhai());
+		model.addAttribute("toKhai", tk.findOneToKhai(Integer.parseInt(id)));
 		return "XemChiTietGiayKhaiSinh";
 	}
 	
 
+	@RequestMapping(value="/CapNhatGiayKhaiSinh/{id}/")
+	public String sua(@PathVariable String id, Model model, Model model1){
+		
+		
+		model1.addAttribute("listXa", xa.lietkeXa());
+		model1.addAttribute("listDanToc", dt.lietkeDanToc());
+		model1.addAttribute("listTonGiao", tg.lietkeTonGiao());
+		model1.addAttribute("listQuocTich", qt.lietkeQuocTich());
+		model1.addAttribute("listQuanHeChuHo",qhch.lietkeQuanHeChuHo());
+		model1.addAttribute("listNhanKhau",nk.lietkeNhanKhau());
+		model1.addAttribute("listTinhTrangToKhai", tttk.lietkeTinhTrangToKhai());
+		model1.addAttribute("listToKhai", tk.lietkeToKhai());
+		model.addAttribute("toKhai", tk.findOneToKhai(Integer.parseInt(id)));
+		return "CapNhatGiayKhaiSinh";
+	}
+	
+	
+	@RequestMapping(value="/xulysua")
+	public String xulysua(@Valid ToKhai tokhai, BindingResult result, RedirectAttributes redirect){
+		
+		 if (result.hasErrors()) {
+				
+		        return "XemGiayKhaiSinhChuaDuyet";
+		    }
+		tk.sua(tokhai);
+		redirect.addFlashAttribute("success", "Thêm tờ khai thành công!");
+		return "redirect:/XemGiayKhaiSinhChuaDuyet";
+	}
+	
+	
+	
 }

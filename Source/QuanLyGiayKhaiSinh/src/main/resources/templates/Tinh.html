@@ -13,21 +13,16 @@
     <nav th:replace="layout :: header"></nav>
 
     <div class="container main-content form">
-    <h1 style="font-size:30px;"><b>ĐĂNG NHẬP TÀI KHOẢN</b></h1>
+    
         <div class="row">
-          <form  th:action="@{/DangNhapCB}" method="POST" >
-            <div class="form-group">
-              <lable style="font-size:17px;"><b><i>Mã Cán Bộ:</i></b></lable>
-             <input type="text" id="email" name="email"  th:placeholder="Email"
-				class="form-control" />
-            </div>
-            <div class="form-group">
-              <lable style="font-size:17px;"><b><i>Mật Khẩu:</i></b></lable>
-             <input type="password"  th:placeholder="Password"
-				id="password" name="password" class="form-control" />
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+          <form  th:action="@{/themtinh}" method="get" th:object="${Tinh}" >
+           
+          <div class="form-group">
+				<label>Ten Tinh: </label> <input type="text" class="form-control"
+					th:field="*{tenTinh}" placeholder="Nhập nơi sinh" />
+
+			</div>
+            <button type="submit" class="btn btn-primary">Luu</button>
             <button type="submit" class="btn btn-primary">Quay Về</button>
           </form>
         </div>
