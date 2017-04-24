@@ -9,4 +9,5 @@ import com.example.model.TinhTrangToKhai;
 @Transactional
 public interface TinhTrangToKhaiRepository extends JpaRepository<TinhTrangToKhai, Integer> {
 
+	TinhTrangToKhai findByTenTinhTrang(String ten);
 }

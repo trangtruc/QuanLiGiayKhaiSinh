@@ -7,47 +7,72 @@
     <nav th:replace="layout :: header"></nav>
 
     <div class="container main-content list">
-     <h1 style="background-color:aqua;" align="center"><b>GIẤY KHAI SINH ĐÃ DUYỆT</b></h1>
-        <div class="row">
-            <form class="form-inline" align="center" action="#"
-            th:action="@{/giaykhaisinh/XemGiayKSDaDuyet}" method="GET">
-            	<label>Mã Số Khai Sinh:</label>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="q" placeholder="Nhập mã số khai sinh..." />
-                </div>
-                <button type="submit" class="btn btn-primary">Tìm Kiếm!</button>
-            </form>
-        </div>
-        <div class="row">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Mã Số</th>
-                        <th>Họ và Tên</th>
-                        <th>Ngày Tháng Năm Sinh</th>
-                        <th>Nơi Sinh</th>
-                        <th>Quốc Tịch</th>
-                        <th>Dân Tộc</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>KS03</td>
-                        <td>Nguyễn Văn An</td>
-                        <td>04-12-2016</td>
-                        <td>Bệnh Viện Phụ Sản Quốc Tế Phương Châu, TPCT</td>
-                        <td>Việt Nam</td>
-                        <td>Kinh</td>
-                        <td><a th:href="@{/giaykhaisinh/XemChiTietKhaiSinh}">Xem Chi Tiết</a></td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
+    	<div th:if="${success}" class="row alert alert-success alert-dismissible">
+	        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <span th:text="${success}"></span>
+	    </div>
+    	
+    	<th:block th:if="${#lists.isEmpty(listToKhai)}">
+		    <a th:href="@{/DangKyGiayKhaiSinh}" class="btn btn-success pull-left">
+                	<span class="glyphicon glyphicon-plus"></span> Thêm giấy khai sinh mới
+            </a>
+            <br></br>
+		    <h3>Hiện chưa có giấy khai sinh nào!</h3>
+		</th:block>
+		
+        <th:block th:unless="${#lists.isEmpty(listToKhai)}">
+            <div class="row">
+                <a th:href="@{/DangKyGiayKhaiSinh}" class="btn btn-success pull-left">
+                	<span class="glyphicon glyphicon-plus"></span> Add new contact
+               	</a>
+                <form class="form-inline pull-right" action="#" th:action="@{/daduyet/search}" method="GET">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="q" 
+                            placeholder="Type contact name..." />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+            <div class="row">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã số</th>
+                            <th>Ngày lập</th>
+                            <th>Họ và tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Nơi sinh</th>
+                            <th>Quốc tịch</th>
+                            <th>Dân tộc</th>
+                            <th></th>
+                            <th></th>
+                             <th></th>
+                            
+                            
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="toKhai,iterStat : ${listToKhai}">
+                            <td th:text="${iterStat.count}"></td>
+                            <td th:text="${toKhai.maToKhai}"></td>
+                            <td th:text="${toKhai.ngayLap}"></td>
+                            <td th:text="${toKhai.hoTenNguoiKS}"></td>
+                            <td th:text="${toKhai.ngaySinh}"></td>
+                            <td th:text="${toKhai.noiSinh}"></td>
+                            <td th:text="${toKhai.classQuocTich.tenQuocTich}"></td>
+                            <td th:text="${toKhai.classDanToc.tenDanToc}"></td>
+                           <td><a th:href="@{/XemChiTietGiayKhaiSinh/{id}/xem(id=${toKhai.maToKhai})}">In Giấy Khai Sinh</a></td> 
+                            <td><a th:href="@{/XemChiTietGiayKhaiSinh/{id}/xem(id=${toKhai.maToKhai})}">Xem chi tiết</a></td> 
+                              <td><a th:href="@{/CapNhatGiayKhaiSinh/{id}/(id=${toKhai.maToKhai})}">Sữa</a></td> 
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </th:block>
     </div>
-    <!-- /.container -->
-
     <footer th:replace="layout :: footer"></footer>
 </body>
 </html>

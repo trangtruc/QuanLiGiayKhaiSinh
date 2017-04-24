@@ -8,4 +8,5 @@ import com.example.model.NhanKhau;
 @Transactional
 public interface NhanKhauRepository extends JpaRepository<NhanKhau, Integer>{
 
+	
 }

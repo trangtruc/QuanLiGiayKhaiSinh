@@ -9,7 +9,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.example.model.TinhTrangToKhai;
 import com.example.model.ToKhai;
 import com.example.service.DanTocServiceImpl;
 import com.example.service.NhanKhauServiceImpl;
@@ -85,9 +88,15 @@ public class GiayKhaiSinhController {
 
 	@RequestMapping(value="/XemGiayKhaiSinhChuaDuyet")
 	public String DanhSachToKhaiChuaDuyet(Model model){
-		
-		model.addAttribute("listToKhai", tk.lietkeToKhai());
+		String tentinhtrang="Chưa Duyệt";
+		model.addAttribute("listToKhai", tk.findGiayKhaiSinhChuaDuyet(tttk.findTen(tentinhtrang)));
 		return "XemGiayKhaiSinhChuaDuyet";
+	}
+	@RequestMapping(value="/XemGiayKhaiSinhDaDuyet")
+	public String DanhSachToKhaiDaDuyet(Model model){
+		String tentinhtrang="Đã Duyệt";
+		model.addAttribute("listToKhai", tk.findGiayKhaiSinhDaDuyet(tttk.findTen(tentinhtrang)));
+		return "XemGiayKhaiSinhDaDuyet";
 	}
 	
 	@RequestMapping(value="/XemChiTietGiayKhaiSinh/{id}/xem")
@@ -134,6 +143,24 @@ public class GiayKhaiSinhController {
 		return "redirect:/XemGiayKhaiSinhChuaDuyet";
 	}
 	
+	 @RequestMapping("/chuaduyet/search")
+	    public String search(@RequestParam("q") String q, Model model) {
+	        if (q.equals("")) {
+	            return "redirect:/XemGiayKhaiSinhChuaDuyet";
+	        }
+	        
+	        model.addAttribute("listToKhai", tk.findName(q));
+	        return "XemGiayKhaiSinhChuaDuyet";
+	    }
 	
+	 @RequestMapping("/daduyet/search")
+	    public String search2(@RequestParam("q") String q, Model model) {
+	        if (q.equals("")) {
+	            return "redirect:/XemGiayKhaiSinhDaDuyet";
+	        }
+	       
+	        model.addAttribute("listToKhai", tk.findName(q));
+	        return "XemGiayKhaiSinhDaDuyet";
+	    }
 	
 }

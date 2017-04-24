@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import com.example.model.TinhTrangToKhai;
 import com.example.model.ToKhai;
 import com.example.repository.ToKhaiRepository;
 import java.util.List;
@@ -12,10 +13,8 @@ public class ToKhaiServiceImpl  {
 	@Autowired
 	ToKhaiRepository tk;
 	
-	
-	
-	
-	public List<ToKhai> lietkeToKhai(){
+
+	public Iterable<ToKhai> lietkeToKhai(){
 		
 		 return tk.findAll();
 	}
@@ -34,6 +33,20 @@ public class ToKhaiServiceImpl  {
 		return tk.findOne(id);
 	}
 	
+	public Iterable<ToKhai> findGiayKhaiSinhChuaDuyet(TinhTrangToKhai tinhtrang){
+		
+		return tk.findByClassTinhTrangToKhai(tinhtrang);
+	}
+
+	
+	public Iterable<ToKhai> findName(String name){
+		return tk.findByHoTenNguoiKS(name);
+	}
+	
+	public Iterable<ToKhai> findGiayKhaiSinhDaDuyet(TinhTrangToKhai tinhtrang) {
+
+		return tk.findByClassTinhTrangToKhai(tinhtrang);
+	}
 	public void sua(ToKhai  tokhai){
 		
 		ToKhai temp= tk.findOne(tokhai.getMaToKhai());
