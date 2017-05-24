@@ -13,13 +13,16 @@ public class TinhTrangToKhaiServiceImpl {
 	
 	@Autowired
 	TinhTrangToKhaiRepository tttk;
-	
+		
 	public TinhTrangToKhai findTen(String ten){
 		return tttk.findByTenTinhTrang(ten);
 	}
 	public List<TinhTrangToKhai> lietkeTinhTrangToKhai(){
 		
 		 return tttk.findAll();
+	}
+	public TinhTrangToKhai findOne(){
+		return tttk.findByTenTinhTrang("Đã duyệt");
 	}
 
 }

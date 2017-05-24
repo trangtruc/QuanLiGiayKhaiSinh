@@ -8,7 +8,7 @@
 	<nav th:replace="layout :: header"></nav>
 	<div class="container main-content list">
 
-	    <form  th:action="@{/xulysua}" method="get" th:object="${toKhai}" >
+	    <form  th:action="@{/xulysua}" method="post" th:object="${toKhai}" >
 	    <input type="hidden" th:field="*{maToKhai}" >
 	    
 			<div class="form-group">
@@ -43,12 +43,9 @@
 				</h2>
 			</div>
 			<div class="form-group">
-				<label>Chứng Minh Nhân Dân Hoặc Mã Nhân Khẩu Của Người Đi
-					Đăng Ký: </label>
-					<select th:field="*{classNhanKhau_Ngdk}">
-					<option th:each="item:${listNhanKhau}" th:value="${item.maNhanKhau}" th:text="${item.hoTenNhanKhau}"></option>
-					
-				</select>
+				
+				<label>Chứng minh nhân dân của người đi đăng ký: </label>
+				<input type="number" class="form-control" name="cmnd1" th:value="*{classNhanKhau_Ngdk.cmnd}" />
 			</div>
 			<div class="form-group">
 				<label>Quan Hệ Với Người Được Khai Sinh: </label>
@@ -145,11 +142,9 @@
 				</h2>
 			</div>
 			<div class="form-group">
-				<label>Chứng Minh Nhân Dân hoặc Mã Nhân Khẩu Của Mẹ: </label> 
-				<select th:field="*{classNhanKhau_Me}">
-					<option th:each="item:${listNhanKhau}" th:value="${item.maNhanKhau}" th:text="${item.hoTenNhanKhau}"></option>
-					
-				</select>
+				
+				<label>Chứng minh nhân dân của mẹ: </label>
+				<input type="number" class="form-control" name="cmndme1" th:value="*{classNhanKhau_Ngdk.cmnd}" />
 			</div>
 
 			<hr></hr>
@@ -162,11 +157,10 @@
 				</h2>
 			</div>
 			<div class="form-group">
-				<label>Chứng Minh Nhân Dân hoặc Mã Nhân Khẩu Của Cha: </label>
-				<select th:field="*{classNhanKhau_Cha}">
-					<option th:each="item:${listNhanKhau}" th:value="${item.maNhanKhau}" th:text="${item.hoTenNhanKhau}"></option>
-					
-				</select>
+				
+				
+				<label>Chứng minh nhân dân của cha: </label>
+				<input type="number" class="form-control" name="cmndcha1" th:value="*{classNhanKhau_Cha.cmnd}"/>
 			</div>
 			<div class="form-group">
 				<label>Ghi Chú: </label> <input type="text" class="form-control"

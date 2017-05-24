@@ -35,7 +35,7 @@ public class NhanKhau {
 	private String ngaySinhBC;
 	
 	@Column(name="cmnd",nullable=false)
-	private String CMND;
+	private String cmnd;
 	
 	@Column(name="ngaycapcmnd",nullable=false)
 	private Date ngayCapCMND;
@@ -86,7 +86,7 @@ public class NhanKhau {
 		super();
 	}
 
-	public NhanKhau(String hoTenNhanKhau, String gioiTinh, Date ngaySinh, String ngaySinhBC, String cMND,
+	public NhanKhau(String hoTenNhanKhau, String gioiTinh, Date ngaySinh, String ngaySinhBC, String cmnd,
 			Date ngayCapCMND, String noiCapCMND, DanToc classDanToc, TonGiao classTonGiao2, QuocTich classQuocTich2,
 			QuanHeChuHo classQuanHeChuHo, Xa classXa, List<ToKhai> listToKhai_cha, List<ToKhai> listToKhai_me,
 			List<ToKhai> listToKhai_ngdk, SoHoKhau classSoHoKhau) {
@@ -95,7 +95,7 @@ public class NhanKhau {
 		this.gioiTinh = gioiTinh;
 		this.ngaySinh = ngaySinh;
 		this.ngaySinhBC = ngaySinhBC;
-		CMND = cMND;
+		this.cmnd = cmnd;
 		this.ngayCapCMND = ngayCapCMND;
 		this.noiCapCMND = noiCapCMND;
 		this.classDanToc = classDanToc;
@@ -149,12 +149,12 @@ public class NhanKhau {
 		this.ngaySinhBC = ngaySinhBC;
 	}
 
-	public String getCMND() {
-		return CMND;
+	public String getCmnd() {
+		return cmnd;
 	}
 
-	public void setCMND(String cMND) {
-		CMND = cMND;
+	public void setCmnd(String cmnd) {
+		this.cmnd = cmnd;
 	}
 
 	public Date getNgayCapCMND() {
@@ -245,7 +245,6 @@ public class NhanKhau {
 		this.classSoHoKhau = classSoHoKhau;
 	}
 
-	
 	
 
 }

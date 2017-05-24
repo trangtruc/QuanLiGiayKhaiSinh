@@ -111,6 +111,27 @@ public class ToKhai {
 	}
 
 
+	
+
+	public ToKhai(String hoTenNguoiKS, String gioiTinh, Date ngaySinh, String ngaySinhBC, String noiSinh, String ghiChu,
+			QuanHeChuHo classQuanHeVoiNgDK, Xa classXa, Xa classXa2, DanToc classDanToc, QuocTich classQuocTich,
+			TonGiao classTonGiao) {
+		super();
+		this.hoTenNguoiKS = hoTenNguoiKS;
+		this.gioiTinh = gioiTinh;
+		this.ngaySinh = ngaySinh;
+		this.ngaySinhBC = ngaySinhBC;
+		this.noiSinh = noiSinh;
+		this.ghiChu = ghiChu;
+		this.classQuanHeVoiNgDK = classQuanHeVoiNgDK;
+		this.classXa = classXa;
+		this.classXa2 = classXa2;
+		this.classDanToc = classDanToc;
+		this.classQuocTich = classQuocTich;
+		this.classTonGiao = classTonGiao;
+	}
+
+
 	public int getMaToKhai() {
 		return maToKhai;
 	}

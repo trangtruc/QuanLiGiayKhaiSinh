@@ -1,6 +1,5 @@
 package com.example.service;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +13,13 @@ public class NhanKhauServiceImpl {
 	@Autowired
 	NhanKhauRepository nk;
 	
-	public List<NhanKhau> lietkeNhanKhau(){
+	public Iterable<NhanKhau> lietkeNhanKhau(){
 		
 		return nk.findAll();
+	}
+	
+	public NhanKhau timNhanKhau(String id){
+		return nk.findByCmnd(id);
 	}
 	
 	

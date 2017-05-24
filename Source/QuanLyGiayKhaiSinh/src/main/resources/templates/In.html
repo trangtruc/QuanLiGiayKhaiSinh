@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+	
+	<nav th:replace="layout :: header"></nav>
+	<div class="jumbotron" th:object="${toKhai}" >
+		<h3 style="text-align: center;">
+			<strong>CỘNG HO&Agrave; X&Atilde; HỘI CHỦ NGHĨA VIỆT NAM</strong>
+		</h3>
+		<h4 style="text-align: center;">Độc lập - Tự do - Hạnh
+			ph&uacute;c</h4>
+		<p style="text-align: center;">_____***_____<br><br>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Qh.png"
+	  class="img-rounded" width="50px" height="50px" />
+	    </p>
+		<h3 style="text-align: center; color: red;">GIẤY KHAI SINH</h3><br/>
+		<h3 style="text-align: center;" th:text="'Số đăng kí: '+${toKhai.maToKhai}"></h3><br/>
+		<div style="padding-left: 160px">
+		<p th:text="'Họ tên khai sinh:    '+${toKhai.hoTenNguoiKS}"></p>
+		<p th:text="'Giới tính:    '+${toKhai.gioiTinh}"></p>
+		<p th:text="'Ngày, tháng, năm sinh:    '+${toKhai.ngaySinh}"></p>
+		
+		<p th:text="'Nơi sinh:    '+${toKhai.ngaySinhBC}"></p>
+		<p th:text="'Ngày sinh bằng chữ:    '+${toKhai.noiSinh}"></p>
+		<p th:text="'Dân tộc:    '+${toKhai.classDanToc.tenDanToc}"></p>
+		<p th:text="'Quốc tịch:    '+${toKhai.classQuocTich.tenQuocTich}"></p>
+		<p th:text="'Họ tên cha:    '+${toKhai.classNhanKhau_Cha.hoTenNhanKhau}"></p>
+		<p th:text="'Dân tộc:    '+${toKhai.classNhanKhau_Cha.classDanToc.tenDanToc}"></p>
+		<p th:text="'Quốc tịch:    '+${toKhai.classNhanKhau_Cha.classQuocTich2.tenQuocTich}"></p>
+		<p th:text="'Nơi đăng ký thường trú:    '+${toKhai.classNhanKhau_Cha.classXa.tenXa}"></p>
+		<p th:text="'Họ tên mẹ:    '+${toKhai.classNhanKhau_Me.hoTenNhanKhau}"></p>
+		<p th:text="'Dân tộc:    '+${toKhai.classNhanKhau_Me.classDanToc.tenDanToc}"></p>
+		<p th:text="'Quốc tịch:    '+${toKhai.classNhanKhau_Me.classQuocTich2.tenQuocTich}"></p>
+		<p th:text="'Nơi đăng ký thường trú:    '+${toKhai.classNhanKhau_Me.classXa.tenXa}"></p>
+		<p th:text="'Nơi đăng ký khai sinh:    '+${toKhai.classNhanKhau_Me.classXa.tenXa}"></p>
+		<p th:text="'Ngày đăng ký khai sinh:    '+${toKhai.ngayLap}"></p>
+		<p th:text="'Ghi chú:    '+${toKhai.ghiChu}"></p>
+		<p th:text="'Họ và tên người đi khai sinh:    '+${toKhai.classNhanKhau_Ngdk.hoTenNhanKhau}"></p>
+		<p th:text="'Họ và tên người đi khai sinh:    '+${toKhai.classNhanKhau_Ngdk.cmnd}"></p>
+		<p th:text="'Quan hệ với ngườu được khai sinh:    '+${toKhai.classQuanHeVoiNgDK.tenQuanHe}"></p>
+		
+		</div>
+	</div>
+	<p>
+		<script type="text/javascript">
+			function returnprint() {
+				window.print();
+			}
+		</script>
+		<!--this.style.display='none';huy.style.display='none';  -->
+		<a onclick="returnprint();" class="btn btn-info"
+			role="button">In Giấy Hẹn</a> 
+			<a id="huy"
+			th:href="@{/XemGiayKhaiSinhDaDuyet}"
+			class="btn btn-success"> Huỷ</a>
+	</p>
+	<!-- /.container -->
+	
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

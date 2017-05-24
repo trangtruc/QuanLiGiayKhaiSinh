@@ -7,12 +7,10 @@ import org.springframework.stereotype.Service;
 import com.example.model.TinhTrangToKhai;
 import com.example.model.ToKhai;
 import com.example.repository.ToKhaiRepository;
-import java.util.List;
 @Service
 public class ToKhaiServiceImpl  {
 	@Autowired
 	ToKhaiRepository tk;
-	
 
 	public Iterable<ToKhai> lietkeToKhai(){
 		
@@ -71,6 +69,8 @@ public class ToKhaiServiceImpl  {
 		tk.save(temp);
 		
 	}
+	
+	
 	
 	
 	

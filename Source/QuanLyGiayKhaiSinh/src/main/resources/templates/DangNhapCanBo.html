@@ -10,10 +10,10 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <nav th:replace="layout :: header"></nav>
 
-    <div class="container main-content form">
-    <h1 style="font-size:30px;"><b>ĐĂNG NHẬP TÀI KHOẢN</b></h1>
+<center>
+    <div class="container main-content form" style="width: 500px">
+    <h1 style="font-size:30px;"><b>ĐĂNG NHẬP TÀI KHOẢN</b></h1><br><br>
         <div class="row">
           <form  th:action="@{/DangNhapCB}" method="POST" >
             <div class="form-group">
@@ -28,11 +28,12 @@
             </div>
             
             <button type="submit" class="btn btn-primary">Đăng Nhập</button>
-            <button type="submit" class="btn btn-primary">Quay Về</button>
+        
           </form>
         </div>
     </div><!-- /.container -->
 
-    <footer th:replace="layout :: footer"></footer>
+    <footer th:replace="layout :: footer" style="width: 500px"></footer>
+    </center>
 </body>
 </html>
